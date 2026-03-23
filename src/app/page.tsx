@@ -17,7 +17,7 @@ export default function Page() {
 
   const CALL_TITLE = 'Obrigado por participar!';
   const CALL_TEXT = 'Suas respostas ajudam nossos estudos. Quer conhecer mais sobre a pesquisa?';
-  const CALL_LINK = 'https://www.fgv.br/';
+  const CALL_LINK = 'https://portalibre.fgv.br/';
 
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -309,6 +309,31 @@ export default function Page() {
           <a className="link" href={CALL_LINK} target="_blank" rel="noreferrer">Saiba mais</a>
         </div>
       </section>
+
+      <footer className="footer">
+        <div className="footer-content">
+          <div className="footer-main">
+            <h3>Fale conosco</h3>
+            <p>
+              Em caso de dúvidas, sugestões ou interesse em conhecer mais sobre a pesquisa,
+              entre em contato pelos canais abaixo.
+            </p>
+          </div>
+
+          <ul className="footer-list">
+            <li>
+              <a href="tel:+5521999999999" className="footer-link">
+                📞 (21) 99999-9999
+              </a>
+            </li>
+            <li>
+              <a href="mailto:contato@fgv.br" className="footer-link">
+                ✉️ contato@fgv.br
+              </a>
+            </li>
+          </ul>
+        </div>
+      </footer>
     </main>
   );
 }

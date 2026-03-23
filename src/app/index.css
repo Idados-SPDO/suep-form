@@ -372,3 +372,64 @@ fieldset[disabled] {
   border: 1px solid #f5c2c7;
   color: #7f1d1d;
 }
+
+.footer {
+  background: linear-gradient(135deg, var(--fgv-primary), var(--fgv-primary-dark));
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  padding: 20px 24px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+
+  max-width: 620px;   /* menor que o card */
+  margin: 0 auto 24px;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 16px;
+}
+
+.footer-main h3 {
+  margin: 0 0 8px;
+  font-size: 20px;
+  color: #fff;
+}
+
+.footer-main p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.92);
+  line-height: 1.6;
+  font-size: 14px;
+}
+
+.footer-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.footer-link {
+  color: rgba(255, 255, 255, 0.96);
+  text-decoration: none;
+  font-weight: 500;
+  transition: opacity 0.2s ease, text-decoration 0.2s ease;
+}
+
+.footer-link:hover {
+  opacity: 0.85;
+  text-decoration: underline;
+}
+
+@media (max-width: 640px) {
+  .footer {
+    max-width: 100%;
+    padding: 18px 20px;
+  }
+}
