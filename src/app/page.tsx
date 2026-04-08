@@ -322,13 +322,13 @@ export default function Page() {
 
           <ul className="footer-list">
             <li>
-              <a href="tel:+5521999999999" className="footer-link">
-                📞 (21) 99999-9999
+              <a className="footer-link">
+                📞 (21) 2042-5407
               </a>
             </li>
             <li>
-              <a href="mailto:contato@fgv.br" className="footer-link">
-                ✉️ contato@fgv.br
+              <a href="mailto:pesquisa.ibre@fgv.br" className="footer-link">
+                ✉️ pesquisa.ibre@fgv.br
               </a>
             </li>
           </ul>
