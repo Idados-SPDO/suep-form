@@ -10,6 +10,7 @@ export default function Page() {
   const [q1, setQ1] = useState<string | null>(null);
   const [status, setStatus] = useState<Status>('idle');
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
+  const [consentGiven, setConsentGiven] = useState<boolean | null>(null);
 
   const ocupado = q1 === 'Sim';
   const desocupado = q1 === 'Não';
@@ -52,7 +53,51 @@ export default function Page() {
   );
 
   return (
-    <main className="container">
+    <>
+      {consentGiven === null && (
+        <div className="consent-overlay" role="dialog" aria-modal="true" aria-labelledby="consent-title">
+          <div className="consent-card">
+            <h2 id="consent-title">Aviso de Privacidade e Proteção de Dados</h2>
+            <p>
+              O <strong>FGV IBRE</strong> coleta os dados informados neste formulário com a finalidade
+              exclusiva de realizar pesquisas de percepção econômica. As informações são tratadas de
+              forma anônima e agregada, em conformidade com a{' '}
+              <strong>Lei Geral de Proteção de Dados (LGPD — Lei 13.709/2018)</strong>.
+            </p>
+            <p>
+              Dados coletados incluem informações demográficas (idade, gênero, escolaridade, renda,
+              raça/cor) e percepções sobre economia e mercado de trabalho. Não coletamos dados de
+              identificação pessoal como nome, CPF ou endereço.
+            </p>
+            <p>
+              Para exercer seus direitos de titular (acesso, correção ou exclusão de dados) ou para
+              mais informações, entre em contato:{' '}
+              <strong>pesquisa.ibre@fgv.br</strong>.
+            </p>
+            <div className="consent-actions">
+              <button className="consent-btn consent-btn--accept" onClick={() => setConsentGiven(true)}>
+                Aceitar e continuar
+              </button>
+              <button className="consent-btn consent-btn--decline" onClick={() => setConsentGiven(false)}>
+                Recusar
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+      {consentGiven === false && (
+        <div className="consent-overlay" role="alert">
+          <div className="consent-card">
+            <h2>Participação não autorizada</h2>
+            <p>
+              Você optou por não autorizar o uso dos seus dados. Não será possível participar da
+              pesquisa sem consentimento, pois os dados são necessários para sua finalidade.
+            </p>
+            <p>Se mudar de ideia, recarregue a página para tentar novamente.</p>
+          </div>
+        </div>
+      )}
+      <main className="container">
       <header className="topbar">
         <Image src={logo} alt="FGV" className="logo" />
         <div className="title">
@@ -335,5 +380,6 @@ export default function Page() {
         </div>
       </footer>
     </main>
+    </>
   );
 }

@@ -115,6 +115,7 @@ select {
     background: var(--fgv-bg);
     color: var(--fgv-text);
     padding: 24px 16px 48px;
+    border-radius: 12px;
 }
 
 .topbar {
@@ -431,5 +432,92 @@ fieldset[disabled] {
   .footer {
     max-width: 100%;
     padding: 18px 20px;
+  }
+}
+
+/* LGPD Consent Modal */
+.consent-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 1rem;
+}
+
+.consent-card {
+  background: #fff;
+  border-radius: 12px;
+  max-width: 560px;
+  width: 100%;
+  padding: 2rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+.consent-card h2 {
+  color: var(--fgv-primary);
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.consent-card p {
+  color: #444;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin-bottom: 0.75rem;
+}
+
+.consent-actions {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.consent-btn {
+  flex: 1;
+  min-width: 140px;
+  padding: 0.7rem 1rem;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: background 0.2s;
+}
+
+.consent-btn--accept {
+  background: var(--fgv-primary);
+  color: #fff;
+}
+
+.consent-btn--accept:hover {
+  background: var(--fgv-primary-dark);
+}
+
+.consent-btn--decline {
+  background: transparent;
+  color: var(--fgv-primary);
+  border: 2px solid var(--fgv-primary);
+}
+
+.consent-btn--decline:hover {
+  background: #f0f5fb;
+}
+
+@media (max-width: 640px) {
+  .consent-card {
+    padding: 1.5rem;
+  }
+
+  .consent-actions {
+    flex-direction: column;
+  }
+
+  .consent-btn {
+    min-width: unset;
   }
 }
